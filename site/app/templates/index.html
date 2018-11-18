@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+{%block content %}
+
+ <h1>Light Config - {{ config.name }}</h1>
+{% for color in config.colors %}
+<div><p>{{ color }}</p></div>
+{% endfor %}
+
+{% endblock %}

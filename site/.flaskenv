@@ -1,0 +1,1 @@
+FLASK_APP=light_select.py
