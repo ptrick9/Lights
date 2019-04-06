@@ -48,7 +48,7 @@ void loop()
     if(received)
     {
         digitalWrite(LED_BUILTIN,HIGH);
-        Serial.printf("Slave received: '%s'\n", databuf);
+        Serial.printf("Slave received: '%s' %d\n", databuf, received);
         received = 0;
         digitalWrite(LED_BUILTIN,LOW);
     }
