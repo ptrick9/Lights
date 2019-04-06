@@ -6,7 +6,7 @@ import copy
 
 system = 'Pi'
 channel = 1
-ADDRESS = 0x60
+ADDRESS = 0x66
 bus = None
 
 if system == 'Pi':
