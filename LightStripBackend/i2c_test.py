@@ -1,4 +1,4 @@
-system = 'PC'
+system = 'Pi'
 channel = 1
 ADDRESS = 0x66
 bus = None
