@@ -4,7 +4,7 @@ import json
 import copy
 
 
-system = 'PC'
+system = 'Pi'
 channel = 1
 ADDRESS = 0x60
 bus = None
@@ -178,7 +178,7 @@ def sendLights(lights):
         temp = [i]
         temp.extend(data[i*3:(i+10)*3])
         print(len(temp), i*3, (i+10)*3)
-        #bus.write_block_data(ADDRESS, 2, (0x01))
+        bus.write_block_data(ADDRESS, 2, temp)
 
 
 
