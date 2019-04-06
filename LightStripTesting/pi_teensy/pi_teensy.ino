@@ -11,6 +11,8 @@
 // -------------------------------------------------------------------------------------------
 
 #include <i2c_t3.h>
+#include <OctoWS2811.h>
+#include <movingAvg.h>
 
 // Function prototypes
 void receiveEvent(size_t count);
@@ -26,11 +28,27 @@ volatile uint8_t received;
 
 boolean on = true;
 
+
+const int ledsPerStrip = 150;
+
+DMAMEM int displayMemory[ledsPerStrip*6];
+int drawingMemory[ledsPerStrip*6];
+
+const int config = WS2811_GRB | WS2811_800kHz;
+
+OctoWS2811 leds(ledsPerStrip, displayMemory, drawingMemory, config);
+
+#define GREEN  0x002607
+
+
 //
 // Setup
 //
 void setup()
 {
+
+    leds.begin();
+    leds.show();
     pinMode(LED_BUILTIN,OUTPUT); // LED
 
     // Setup for Slave mode, address 0x66, pins 18/19, external pullups, 400kHz
@@ -45,12 +63,28 @@ void setup()
     Wire.onRequest(requestEvent);
 
     Serial.begin(115200);
+
+    Serial.begin(9600);
+  Serial.println("starting");
+
+  for (int i=0; i < 150; i++) {
+    leds.setPixel(i, GREEN);
+    leds.show();
+    delayMicroseconds(200000/150);
+  }
+  for (int i=0; i < 150; i++) {
+    leds.setPixel(150-i, 0);
+    leds.show();
+    delayMicroseconds(200000/150);
+  }
 }
 
 void loop()
 {
     // print received data - this is done in main loop to keep time spent in I2C ISR to minimum
-    if(received)
+    
+    
+    /*if(received)
     {
         digitalWrite(LED_BUILTIN,HIGH);
         Serial.printf("Slave received: '%s' %d\n", databuf, received);
@@ -61,7 +95,16 @@ void loop()
         }
         received = 0;
         digitalWrite(LED_BUILTIN,LOW);
+    }*/
+    for(int j = 0; j < 150; j++) {
+      leds.setPixel(j, colorMem[j]);
+      
     }
+    
+
+    leds.show();
+    delayMicroseconds(100000);
+    
 }
 
 //

@@ -4,7 +4,7 @@ import json
 import copy
 
 
-system = 'Pi'
+system = 'PC'
 channel = 1
 ADDRESS = 0x66
 bus = None
@@ -18,7 +18,7 @@ from sqlalchemy.orm import sessionmaker
 from data import Configuration, LightValues, Base
 
 
-engine = create_engine('sqlite:///test.db')
+engine = create_engine('sqlite:////home/pi/Lights/LightStripBackend/test.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
