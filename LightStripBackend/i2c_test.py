@@ -1,6 +1,6 @@
 system = 'PC'
 channel = 1
-ADDRESS = 0x60
+ADDRESS = 0x66
 bus = None
 
 if system == 'Pi':
@@ -8,4 +8,4 @@ if system == 'Pi':
     bus = smbus.SMBus(channel)
 
 data = 45
-bus.write_byte_data(80, 0, data)
+bus.write_byte_data(ADDRESS, 0, data)
