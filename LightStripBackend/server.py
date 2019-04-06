@@ -164,21 +164,22 @@ def brightness(d):
 
 
 def sendLights(lights):
-    data = []
-    i = 0
-    while i < 150:
-        for l in lights:
-            if i >= 150:
-                break
-            r, g, b = extract_channels(l.color)
-            data.extend([r, g, b])
-            i += 1
+    if len(lights > 0):
+        data = []
+        i = 0
+        while i < 150:
+            for l in lights:
+                if i >= 150:
+                    break
+                r, g, b = extract_channels(l.color)
+                data.extend([r, g, b])
+                i += 1
 
-    for i in range(0, 150, 10):
-        temp = [i]
-        temp.extend(data[i*3:(i+10)*3])
-        print(len(temp), i*3, (i+10)*3)
-        bus.write_block_data(ADDRESS, 2, temp)
+        for i in range(0, 150, 10):
+            temp = [i]
+            temp.extend(data[i*3:(i+10)*3])
+            print(len(temp), i*3, (i+10)*3)
+            bus.write_block_data(ADDRESS, 2, temp)
 
 
 
