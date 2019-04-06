@@ -47,7 +47,7 @@ def detailConfig(d):
         'configName': data['configName'],
         'lightValues': lights
     }}
-    detailConfig(sendLights(q))
+    sendLights(q)
     return json.dumps(resp)
 
 
