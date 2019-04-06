@@ -1,6 +1,17 @@
 import asyncio
 import websockets
 import json
+import copy
+
+
+system = 'PC'
+channel = 1
+ADDRESS = 0x60
+bus = None
+
+if system == 'Pi':
+    import smbus
+    bus = smbus.SMBus(channel)
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -36,7 +47,9 @@ def detailConfig(d):
         'configName': data['configName'],
         'lightValues': lights
     }}
+    detailConfig(sendLights(q))
     return json.dumps(resp)
+
 
 
 def deleteConfig(d):
@@ -72,7 +85,10 @@ def editConfig(d):
         session.add(new_light)
         session.commit()
         i += 1
+    sendLights(lights)
     return json.dumps({'messageSuccess': 'True'})
+
+
 
 
 
@@ -99,10 +115,22 @@ def select(d):
     print("selected %s" % n)
     global selected
     selected = n
+    config = session.query(Configuration).filter(Configuration.name == d['data']['config'])[0]
+
+    lights = session.query(LightValues).filter(LightValues.config == config).all()
+    sendLights(lights)
+
 
 def power(d):
     state = d['data']['state']
     print("Powering: %s" % state)
+    if system == 'Pi':
+        if state == "on":
+            bus.write_block_data(ADDRESS, 0, (0x01))
+        else:
+            bus.write_block_data(ADDRESS, 0, (0x00))
+
+
 
 def extract_channels(color):
     r = (0xff0000 & color) >> 16
@@ -123,16 +151,34 @@ def brightness(d):
 
     lights = session.query(LightValues).filter(LightValues.config == config).all()
 
-    for ll in lights:
+    newl = copy.deepcopy(lights)
+
+    for ll in newl:
         print(ll.color)
         r, g, b = extract_channels(ll.color)
         r = int(r * level)
         g = int(g * level)
         b = int(b * level)
         color = rebuild_color(r, g, b)
-        print(color)
+    sendLights(newl)
 
 
+def sendLights(lights):
+    data = []
+    i = 0
+    while i < 150:
+        for l in lights:
+            if i >= 150:
+                break
+            r, g, b = extract_channels(l.color)
+            data.extend([r, g, b])
+            i += 1
+
+    for i in range(0, 150, 10):
+        temp = [0x01, i]
+        temp.extend(data[i*3:(i+10)*3])
+        print(len(temp), i*3, (i+10)*3)
+        #bus.write_block_data(ADDRESS, 0, (0x01))
 
 
 
@@ -181,6 +227,6 @@ def get_ip_address():
     print(s.getsockname()[0])
     return s.getsockname()[0]
 
-asyncio.get_event_loop().run_until_complete(websockets.serve(echo, get_ip_address(), 8765))
+asyncio.get_event_loop().run_until_complete(websockets.serve(echo, '0.0.0.0', 8765))
 #asyncio.get_event_loop().run_until_complete(websockets.serve(echo, '127.0.0.1', 8765))
 asyncio.get_event_loop().run_forever()

@@ -58,6 +58,7 @@ public class LightActivity extends AppCompatActivity {
                         JSONObject light = jLights.getJSONObject(i);
                         lights.add(light.getInt("color"));
                     }
+                    //mAdapter.notifyDataSetChanged();
                 } else {
                     Log.e("JSON", "Error command not detail");
                 }
@@ -95,7 +96,7 @@ public class LightActivity extends AppCompatActivity {
         config = data.getStringExtra("config");
         type = data.getStringExtra("type");
 
-        detail_config();
+
 
 
         recyclerView = (RecyclerView) findViewById(R.id.light_view);
@@ -112,6 +113,8 @@ public class LightActivity extends AppCompatActivity {
         mAdapter = new lightAdapter(lights);
         recyclerView.setAdapter(mAdapter);
 
+
+        detail_config();
 
         Button addButton = this.findViewById(R.id.addLight);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -131,6 +134,8 @@ public class LightActivity extends AppCompatActivity {
                 send_config();
             }
         });
+
+        mAdapter.notifyDataSetChanged();
 
 
     }

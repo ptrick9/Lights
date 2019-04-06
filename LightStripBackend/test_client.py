@@ -11,7 +11,7 @@ async def hello(uri):
         }}
         '''
         m = {'command' : 'new_config', 'data': {
-            'configName' : 'new_test', 'lightValues': [{'pos': 0, 'color': 0xff0000}, {'pos': 1, 'color': 0x00ff00}]
+            'configName' : 'new_test2', 'lightValues': [{'pos': 0, 'color': 0xff0000}, {'pos': 1, 'color': 0x00ff00}]
         }}
 
         '''
@@ -31,4 +31,4 @@ async def hello(uri):
         print(d)
 
 asyncio.get_event_loop().run_until_complete(
-    hello('ws://192.168.1.217:8765'))
+    hello('ws://192.168.1.100:8765'))
