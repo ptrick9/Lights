@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/bright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Brightness" />
+
+    <SeekBar
+        android:id="@+id/brightBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="20"
+        android:progress="0" />
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="refresh_clicked"
+        android:text="Refresh" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/config_view"
+        android:layout_width="match_parent"
+        android:layout_height="364dp" />
+
+    <Switch
+        android:id="@+id/on-off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="System Power" />
+
+    <Button
+        android:id="@+id/addConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create New" />
+
+</LinearLayout>

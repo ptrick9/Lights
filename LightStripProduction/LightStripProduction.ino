@@ -57,7 +57,19 @@
 #define WHITE  0x101010
 
 #define PURPLE 0x90217a
-#define LIGHTPURPLE 0x505050
+#define LIGHTPURPLE 0x180018
+
+#define DARKBLUE 0x081838
+#define LIGHTBLUE 0x002828
+
+#define LIGHTGREEN 0x001800
+
+#define LIGHTYELLOW 0x767f07
+
+
+
+
+
 
 const int ledsPerStrip = 150;
 
@@ -72,12 +84,19 @@ OctoWS2811 leds(ledsPerStrip, displayMemory, drawingMemory, config);
 
 int color1 = 2621752;
 int color2 = 2633524;
+int color3 = 0;
+int color4 = 0;
+int color5 = 0;
 
 
 
 void setup() {
-  color1 = RED;
-color2 = GREEN;
+  color1 = DARKBLUE;
+  color2 = LIGHTPURPLE;
+  color3 = LIGHTBLUE;
+  color4 = LIGHTYELLOW;
+  color5 = LIGHTGREEN;
+  
   leds.begin();
   leds.show();
 
@@ -112,7 +131,7 @@ color2 = GREEN;
 
 void loop() {
   
-  for (int i=0; i < 150; i+= 12) {
+  for (int i=0; i < 150; i+= 30) {
     /*if(i % 10 < 4) {
       leds.setPixel(i, color1);
     } else if (i % 10 == 4 | i%10 == 9) {
@@ -131,6 +150,24 @@ void loop() {
       leds.setPixel(i+j, color2);
     }
     for(int j = 10; j < 12; j++) {
+      leds.setPixel(i+j, 0);
+    }
+    for(int j = 12; j < 16; j++) {
+      leds.setPixel(i+j, color3);
+    }
+    for(int j = 16; j < 18; j++) {
+      leds.setPixel(i+j, 0);
+    }
+    for(int j = 18; j < 22; j++) {
+      leds.setPixel(i+j, color4);
+    }
+    for(int j = 22; j < 24; j++) {
+      leds.setPixel(i+j, 0);
+    }
+    for(int j = 24; j < 28; j++) {
+      leds.setPixel(i+j, color5);
+    }
+    for(int j = 28; j < 30; j++) {
       leds.setPixel(i+j, 0);
     }
     /*
