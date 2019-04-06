@@ -135,16 +135,7 @@ public class LightActivity extends AppCompatActivity {
             }
         });
 
-        Button refreshButton = this.findViewById(R.id.refresh_detail);
-        refreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAdapter.notifyDataSetChanged();
-            }
-        });
-
-
-
+        mAdapter.notifyDataSetChanged();
 
 
     }

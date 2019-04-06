@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    public static String ip_addr = "ws://192.168.1.3:8765";
+    public static String ip_addr = "ws://192.168.0.105:8765";
 
     ArrayList<String> configs = new ArrayList<String>();
 
