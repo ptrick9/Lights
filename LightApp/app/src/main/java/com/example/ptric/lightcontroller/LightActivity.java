@@ -152,8 +152,8 @@ public class LightActivity extends AppCompatActivity {
         }
 
         OkHttpClient client = new OkHttpClient();
-        //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-        Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+        Request request = new Request.Builder().url(MainActivity.getIP()).build();
+        //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
         WebSocket ws = client.newWebSocket(request, listener);
         ws.send(command.toString());
         Log.e("SOCKET", "sent");
@@ -185,8 +185,8 @@ public class LightActivity extends AppCompatActivity {
             }
 
             OkHttpClient client = new OkHttpClient();
-            //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-            Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+            Request request = new Request.Builder().url(MainActivity.getIP()).build();
+            //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
             WebSocket ws = client.newWebSocket(request, listener);
             ws.send(command.toString());
             Log.e("SOCKET", "sent");

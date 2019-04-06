@@ -13,7 +13,7 @@
     <SUITE FILE_PATH="coverage/Lights$Data.coverage" NAME="Data Coverage Results" MODIFIED="1544303028719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$data.coverage" NAME="data Coverage Results" MODIFIED="1544303715700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$Lights.coverage" NAME="Lights Coverage Results" MODIFIED="1554476320741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Lights$server.coverage" NAME="server Coverage Results" MODIFIED="1554511758734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
+    <SUITE FILE_PATH="coverage/Lights$server.coverage" NAME="server Coverage Results" MODIFIED="1554512975949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$light_select.coverage" NAME="light_select Coverage Results" MODIFIED="1542490350664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/site" />
     <SUITE FILE_PATH="coverage/Lights$serveTest.coverage" NAME="serveTest Coverage Results" MODIFIED="1554476432372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$data_view.coverage" NAME="data_view Coverage Results" MODIFIED="1544314453903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
@@ -262,7 +262,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-121" />
     <option name="y" value="-14" />
     <option name="width" value="1852" />

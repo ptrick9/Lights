@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
+    public static String ip_addr = "ws://192.168.1.217:8765";
+
     ArrayList<String> configs = new ArrayList<String>();
 
     private final class EchoWebSocketListener extends WebSocketListener {
@@ -96,8 +98,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        WifiManager wm = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
 
-
+        Log.e("IP", ip);
 
         list_configs();
 
@@ -191,8 +195,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         OkHttpClient client = new OkHttpClient();
-        //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-        Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+        Request request = new Request.Builder().url(ip_addr).build();
+        //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
         WebSocket ws = client.newWebSocket(request, listener);
         ws.send(json.toString());
         Log.e("SOCKET", "sent");
@@ -212,8 +216,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         OkHttpClient client = new OkHttpClient();
-        //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-        Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+        Request request = new Request.Builder().url(ip_addr).build();
+        //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
         WebSocket ws = client.newWebSocket(request, listener);
         ws.send(json.toString());
         Log.e("SOCKET", "sent");
@@ -235,8 +239,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         OkHttpClient client = new OkHttpClient();
-        //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-        Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+        Request request = new Request.Builder().url(ip_addr).build();
+        //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
         WebSocket ws = client.newWebSocket(request, listener);
         ws.send(json.toString());
         Log.e("SOCKET", "sent");
@@ -276,8 +280,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         OkHttpClient client = new OkHttpClient();
-        //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-        Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+        Request request = new Request.Builder().url(ip_addr).build();
+        //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
         WebSocket ws = client.newWebSocket(request, listener);
         ws.send(command.toString());
         Log.e("SOCKET", "sent");
@@ -300,8 +304,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         OkHttpClient client = new OkHttpClient();
-        //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-        Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+        Request request = new Request.Builder().url(ip_addr).build();
+        //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
         WebSocket ws = client.newWebSocket(request, listener);
         ws.send(json.toString());
         Log.e("SOCKET", "sent");
@@ -327,12 +331,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         OkHttpClient client = new OkHttpClient();
-        //Request request = new Request.Builder().url("ws://192.168.1.217:8765").build();
-        Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
+        Request request = new Request.Builder().url(ip_addr).build();
+        //Request request = new Request.Builder().url("ws://pilightcontroller.ddns.net:8765").build();
         WebSocket ws = client.newWebSocket(request, listener);
         ws.send(command.toString());
         Log.e("SOCKET", "sent");
 
+    }
+
+    public static String getIP() {
+        return ip_addr;
     }
 
 }
