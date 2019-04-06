@@ -128,7 +128,7 @@ def power(d):
         if state == "on":
             bus.write_block_data(ADDRESS, 0, (0x01))
         else:
-            bus.write_block_data(ADDRESS, 0, (0x00))
+            bus.write_block_data(ADDRESS, 1, (0x00))
 
 
 
@@ -175,10 +175,10 @@ def sendLights(lights):
             i += 1
 
     for i in range(0, 150, 10):
-        temp = [0x01, i]
+        temp = [i]
         temp.extend(data[i*3:(i+10)*3])
         print(len(temp), i*3, (i+10)*3)
-        #bus.write_block_data(ADDRESS, 0, (0x01))
+        #bus.write_block_data(ADDRESS, 2, (0x01))
 
 
 

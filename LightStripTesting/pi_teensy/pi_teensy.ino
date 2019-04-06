@@ -17,9 +17,14 @@ void receiveEvent(size_t count);
 void requestEvent(void);
 
 // Memory
-#define MEM_LEN 256
+#define MEM_LEN 450
 char databuf[MEM_LEN];
+char colorbuf[MEM_LEN];
+int colorMem[150];
+
 volatile uint8_t received;
+
+boolean on = true;
 
 //
 // Setup
@@ -49,6 +54,11 @@ void loop()
     {
         digitalWrite(LED_BUILTIN,HIGH);
         Serial.printf("Slave received: '%s' %d\n", databuf, received);
+        int i = 0;
+        while (i < 20) {
+          Serial.printf("%d\n", colorMem[i]);
+          i++;
+        }
         received = 0;
         digitalWrite(LED_BUILTIN,LOW);
     }
@@ -60,7 +70,24 @@ void loop()
 void receiveEvent(size_t count)
 {
     Wire.read(databuf, count);  // copy Rx data to databuf
+    int comm = databuf[0];
+    if (comm == 0x0) {
+      on = false; 
+    }
+    else if (comm == 0x01) {
+      on = true;
+    } 
+    else {
+      int pos = databuf[2];
+      for (int i = 0; i < 30; i+=3) {
+        int color = (databuf[i+3+1] << 16) | (databuf[i+3] << 8) | databuf[i+3+2];
+        colorMem[pos] = color;
+        pos++;
+      }
+    }
+    
     received = count;           // set received flag to count, this triggers print in main loop
+    
 }
 
 //
