@@ -164,7 +164,7 @@ def brightness(d):
 
 
 def sendLights(lights):
-    if len(lights > 0):
+    if len(lights) > 0:
         data = []
         i = 0
         while i < 150:
