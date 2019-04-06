@@ -96,9 +96,17 @@ void loop()
         received = 0;
         digitalWrite(LED_BUILTIN,LOW);
     }
-    for(int j = 0; j < 150; j++) {
-      leds.setPixel(j, colorMem[j]);
-      
+    if(on) {
+      for(int j = 0; j < 150; j++) {
+        leds.setPixel(j, colorMem[j]);
+        
+      }
+    } 
+    else {
+      for(int j = 0; j < 150; j++) {
+        leds.setPixel(j, 0);
+        
+      }
     }
     
 

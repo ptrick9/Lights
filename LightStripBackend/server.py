@@ -126,9 +126,9 @@ def power(d):
     print("Powering: %s" % state)
     if system == 'Pi':
         if state == "on":
-            bus.write_block_data(ADDRESS, 0, (0x01))
+            bus.write_block_data(ADDRESS, 0, [0x01])
         else:
-            bus.write_block_data(ADDRESS, 1, (0x00))
+            bus.write_block_data(ADDRESS, 1, [0x00])
 
 
 
