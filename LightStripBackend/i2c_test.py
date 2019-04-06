@@ -8,4 +8,4 @@ if system == 'Pi':
     bus = smbus.SMBus(channel)
 
 data = 65
-bus.write_block_data(ADDRESS, 0, (65, 66, 67, 68))
+bus.write_block_data(ADDRESS, 0, [65, 66, 67, 68])
