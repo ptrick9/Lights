@@ -84,7 +84,7 @@ void loop()
     // print received data - this is done in main loop to keep time spent in I2C ISR to minimum
     
     
-    /*if(received)
+    if(received)
     {
         digitalWrite(LED_BUILTIN,HIGH);
         Serial.printf("Slave received: '%s' %d\n", databuf, received);
@@ -95,7 +95,7 @@ void loop()
         }
         received = 0;
         digitalWrite(LED_BUILTIN,LOW);
-    }*/
+    }
     for(int j = 0; j < 150; j++) {
       leds.setPixel(j, colorMem[j]);
       
@@ -123,7 +123,7 @@ void receiveEvent(size_t count)
     else {
       int pos = databuf[2];
       for (int i = 0; i < 30; i+=3) {
-        int color = (databuf[i+3+1] << 16) | (databuf[i+3] << 8) | databuf[i+3+2];
+        int color = (databuf[i+3+1] << 8) | (databuf[i+3] << 16) | databuf[i+3+2];
         colorMem[pos] = color;
         pos++;
       }

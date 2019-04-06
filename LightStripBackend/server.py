@@ -153,13 +153,14 @@ def brightness(d):
 
     newl = copy.deepcopy(lights)
 
-    for ll in newl:
+    for i,ll in enumerate(newl):
         print(ll.color)
         r, g, b = extract_channels(ll.color)
         r = int(r * level)
         g = int(g * level)
         b = int(b * level)
         color = rebuild_color(r, g, b)
+        newl[i].color = color
     sendLights(newl)
 
 
