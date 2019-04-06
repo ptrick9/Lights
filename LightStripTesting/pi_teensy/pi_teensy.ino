@@ -29,7 +29,7 @@ void setup()
     pinMode(LED_BUILTIN,OUTPUT); // LED
 
     // Setup for Slave mode, address 0x66, pins 18/19, external pullups, 400kHz
-    Wire.begin(I2C_SLAVE, 0x66, I2C_PINS_18_19, I2C_PULLUP_EXT, 400000);
+    Wire.begin(I2C_SLAVE, 0x66, I2C_PINS_18_19, I2C_PULLUP_INT, 400000);
 
     // Data init
     received = 0;
