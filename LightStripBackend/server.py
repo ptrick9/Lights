@@ -171,7 +171,7 @@ def sendLights(lights):
             for l in lights:
                 if i >= 150:
                     break
-                r, g, b = extract_channels(l.color)
+                r, g, b = extract_channels(l['color'])
                 data.extend([r, g, b])
                 i += 1
 
