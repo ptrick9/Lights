@@ -13,7 +13,7 @@
     <SUITE FILE_PATH="coverage/Lights$Data.coverage" NAME="Data Coverage Results" MODIFIED="1544303028719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$data.coverage" NAME="data Coverage Results" MODIFIED="1544303715700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$Lights.coverage" NAME="Lights Coverage Results" MODIFIED="1554476320741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Lights$server.coverage" NAME="server Coverage Results" MODIFIED="1554508768832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
+    <SUITE FILE_PATH="coverage/Lights$server.coverage" NAME="server Coverage Results" MODIFIED="1554511758734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$light_select.coverage" NAME="light_select Coverage Results" MODIFIED="1542490350664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/site" />
     <SUITE FILE_PATH="coverage/Lights$serveTest.coverage" NAME="serveTest Coverage Results" MODIFIED="1554476432372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
     <SUITE FILE_PATH="coverage/Lights$data_view.coverage" NAME="data_view Coverage Results" MODIFIED="1544314453903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LightStripBackend" />
@@ -95,14 +95,14 @@
         <counts>
           <entry key="dummy" value="5" />
           <entry key="html" value="630" />
-          <entry key="py" value="5762" />
+          <entry key="py" value="5781" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="630" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="5762" />
+          <entry key="Python" value="5781" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -151,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LightStripBackend/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="131" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="432">
+              <caret line="180" column="27" selection-start-line="180" selection-start-column="27" selection-end-line="180" selection-end-column="27" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -262,8 +262,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-966" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-121" />
+    <option name="y" value="-14" />
     <option name="width" value="1852" />
     <option name="height" value="1096" />
   </component>
@@ -478,7 +479,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-966" y="0" width="1852" height="1096" extended-state="1" />
+    <frame x="-8" y="-8" width="1852" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" order="0" visible="true" weight="0.17689732" />
@@ -588,8 +589,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LightStripBackend/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="432">
+          <caret line="180" column="27" selection-start-line="180" selection-start-column="27" selection-end-line="180" selection-end-column="27" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

@@ -174,6 +174,13 @@ async def echo(websocket, path):
     else:
         print("invalid command")
 
-asyncio.get_event_loop().run_until_complete(websockets.serve(echo, '192.168.1.217', 8765))
+import socket
+def get_ip_address():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    print(s.getsockname()[0])
+    return s.getsockname()[0]
+
+asyncio.get_event_loop().run_until_complete(websockets.serve(echo, get_ip_address(), 8765))
 #asyncio.get_event_loop().run_until_complete(websockets.serve(echo, '127.0.0.1', 8765))
 asyncio.get_event_loop().run_forever()
